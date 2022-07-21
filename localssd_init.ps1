@@ -8,7 +8,7 @@
   
   A new storage pool with simple (striped) resiliency is created using the configured quantity of Local SSDs required. 
   
-  A new volume is created in the new storage pool using the configured friendly name, all available space, the configured NTFS allocation size , and mounted at the configured drive letter. 
+  A new volume is created in the new storage pool using the configured friendly name, all available space, the configured NTFS allocation size, and mounted at the configured drive letter. 
   
   An optional external post script is run after the volume is created which can perform additional configuration such as changing the Pagefile to use the new volume, or maybe restart SQL Server service.
   .EXAMPLE

@@ -17,3 +17,5 @@ write-eventlog -logname System -source "pagefile" -EntryType Information -eventi
 
 write-host "$(get-date -format g) Final pagefile config:"
 get-wmiobject win32_pagefilesetting
+
+# Host needs to be rebooted in order for Pagefile configuration to take effect.
