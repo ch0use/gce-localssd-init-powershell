@@ -67,7 +67,7 @@ function RecreateVol {
     }
 
     # Create the storage poool and new volume.
-    try { $vol = New-StoragePool -FriendlyName $LocalSSDVol.Name -StorageSubSystemFriendlyName "Windows Storage on localssd" -ResiliencySettingNameDefault "Simple" -ProvisioningTypeDefault "Fixed" -PhysicalDisks $LocalSSDdisks | New-Volume -FriendlyName $LocalSSDVol.Name -AccessPath "$($LocalSSDVol.DriveLetter):" -FileSystem NTFS -AllocationUnitSize $LocalSSDVol.NTFSAlloc -UseMaximumSize }
+    try { $vol = New-StoragePool -FriendlyName $LocalSSDVol.Name -StorageSubSystemFriendlyName "Windows Storage on *" -ResiliencySettingNameDefault "Simple" -ProvisioningTypeDefault "Fixed" -PhysicalDisks $LocalSSDdisks | New-Volume -FriendlyName $LocalSSDVol.Name -AccessPath "$($LocalSSDVol.DriveLetter):" -FileSystem NTFS -AllocationUnitSize $LocalSSDVol.NTFSAlloc -UseMaximumSize }
     catch {
         $logMsg = "$(get-date -format g) Failed to create Storage Pool or Volume: $($_.Exception.Message)"
         write-eventlog -logname System -source "localssd_init" -EntryType Error -eventid 1 -message $logMsg
