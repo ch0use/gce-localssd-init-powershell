@@ -4,7 +4,7 @@
 Check if defined drive letters exist, recreate them if they do not.
 
 ## Description
-The `localssd_init.ps` script should be run at every Windows startup on any GCE instances which have ephemeral Local SSDs. When a GCE instance with Local SSDs is shutdown from within the OS, the GCE instance will power off and data on those ephemeral Local SSDs is lost, including the volume configuration and mapped drive letter. 
+The `localssd_init.ps1` script should be run at every Windows startup on any GCE instances which have ephemeral Local SSDs. When a GCE instance with Local SSDs is shutdown from within the OS, the GCE instance will power off and data on those ephemeral Local SSDs is lost, including the volume configuration and mapped drive letter. 
 
 At Startup, this script will check if specific drive letters exist and recreate them using available Local SSDs if they do not. 
 
